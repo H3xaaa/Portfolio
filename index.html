@@ -21,6 +21,20 @@
     .nav-links { display: flex; gap: 1.75rem; }
     .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
+    .theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 0.5px solid var(--border2); border-radius: 50%; background: transparent; color: var(--text); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+    .theme-toggle:hover { background: var(--bg2); }
+    .theme-toggle i { font-size: 16px; }
+
+    .dark-mode {
+      --bg: #0d0d12;
+      --bg2: #14141c;
+      --text: #f3f3f5;
+      --muted: #a0a0ac;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.12);
+    }
+    .dark-mode .nav { background: rgba(15,15,20,0.94); }
+    .dark-mode .hero-deco, .dark-mode .hero-deco-inner { border-color: rgba(255,255,255,0.12); }
 
     .hero { min-height: 540px; display: flex; flex-direction: column; justify-content: center; padding: 5rem 2.5rem 4rem; border-bottom: 0.5px solid var(--border); position: relative; overflow: hidden; }
     .hero-eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
@@ -119,6 +133,45 @@
     .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     .lightbox-close:hover { background: rgba(255,255,255,0.25); }
 
+    /* PROJECT MODAL */
+    .project-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 999; align-items: center; justify-content: center; padding: 2rem; overflow-y: auto; }
+    .project-modal.open { display: flex; }
+    .project-modal-content { background: var(--bg); border-radius: var(--radius-lg); max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+    .project-modal-header { padding: 2rem 2rem 1.5rem; border-bottom: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; position: sticky; top: 0; background: var(--bg); }
+    .project-modal-title { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
+    .project-modal-close { background: transparent; border: none; color: var(--text); font-size: 22px; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .project-modal-close:hover { opacity: 0.6; }
+    .project-modal-body { padding: 2rem; }
+    .project-modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+    .project-modal-tag { font-size: 11px; padding: 4px 10px; background: var(--bg2); border-radius: 100px; color: var(--muted); }
+    .project-modal-desc { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 1.75rem; }
+    .project-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2rem; }
+    .project-modal-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; font-size: 13px; font-weight: 500; border-radius: var(--radius); text-decoration: none; transition: opacity 0.2s, background 0.2s; }
+    .project-modal-btn-primary { background: #111; color: #fff; border: none; }
+    .project-modal-btn-primary:hover { opacity: 0.82; }
+    .project-modal-btn-secondary { background: transparent; color: var(--text); border: 0.5px solid var(--border2); }
+    .project-modal-btn-secondary:hover { background: var(--bg2); }
+    .project-modal-diagram { border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
+    .project-modal-diagram img { width: 100%; display: block; }
+    .project-modal-diagram-caption { padding: 0.75rem 1rem; font-size: 12px; color: var(--muted); background: var(--bg2); border-top: 0.5px solid var(--border); }
+    .project-modal-section { margin-bottom: 2rem; }
+    .project-modal-section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
+    .project-modal-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .project-modal-gallery-item { border-radius: var(--radius-lg); overflow: hidden; border: 0.5px solid var(--border); aspect-ratio: 4/3; position: relative; cursor: pointer; }
+    .project-modal-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .project-modal-gallery-item:hover img { transform: scale(1.04); }
+
+    /* CRS MODAL */
+    .crs-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; align-items: center; justify-content: center; padding: 2rem; overflow-y: auto; }
+    .crs-modal.open { display: flex; }
+    .crs-modal-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; max-width: 1200px; width: 100%; }
+    .crs-modal-img { max-width: 100%; max-height: 90vh; border-radius: var(--radius-lg); object-fit: contain; }
+    .crs-modal-close { position: fixed; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+    .crs-modal-close:hover { background: rgba(255,255,255,0.25); }
+    @media (max-width: 900px) {
+      .crs-modal-content { grid-template-columns: 1fr; }
+    }
+
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
     .contact-intro { font-size: 16px; color: var(--muted); line-height: 1.75; }
     .contact-links { display: flex; flex-direction: column; gap: 10px; }
@@ -145,14 +198,17 @@
 
 <nav class="nav">
   <span class="nav-logo">Jonard Avenido</span>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#ojt">OJT</a>
-    <a href="#other">Other Designs</a>
-    <a href="#contact">Contact</a>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#ojt">OJT</a>
+      <a href="#other">Other Designs</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><i class="ti ti-moon"></i></button>
   </div>
 </nav>
 
@@ -227,6 +283,22 @@
       </div>
     </div>
     <div class="exp-item">
+      <div class="exp-date">Nov 2024 to present</div>
+      <div>
+        <div class="exp-role">Photobooth Operator</div>
+        <div class="exp-company">Photofavor</div>
+        <div class="exp-desc">Operating photobooth services for events and occasions, managing bookings and providing real-time photo capture and printing services.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">6 months, 2024</div>
+      <div>
+        <div class="exp-role">Data Entry Specialist</div>
+        <div class="exp-company">Vape Products, Shopify Store, Work from Home</div>
+        <div class="exp-desc">Managed product data and inventory for Shopify store, including SKU definitions, stock level updates, and product information maintenance across multiple listings.</div>
+      </div>
+    </div>
+    <div class="exp-item">
       <div class="exp-date">OJT</div>
       <div>
         <div class="exp-role">Graphic Designer Intern</div>
@@ -251,34 +323,17 @@
   <h2 class="section-title">Game projects, University of Caloocan City</h2>
   <p class="section-sub">Game projects I developed while studying at University of Caloocan City, code, backend, and design.</p>
   <div class="projects-grid">
-    <div class="project-card">
+    <div class="project-card" style="cursor: pointer;">
       <div class="project-thumb">
         <img src="ishoot-banner.png" alt="I Shoot Hue banner" />
       </div>
       <div class="project-body">
-        <div class="project-tags">
-          <span class="project-tag">Unity</span>
-          <span class="project-tag">C#</span>
-          <span class="project-tag">Firebase</span>
-          <span class="project-tag">Mobile</span>
-        </div>
         <div class="project-title">I Shoot Hue</div>
-        <div class="project-desc">A color-based mobile shooting game where players identify and shoot hues against the clock. I built the full backend, Firebase auth, real-time database, player stats, and leaderboards, plus designed the S2W team logo and game UI.</div>
-        <div class="project-actions">
-          <a href="https://seen2workz.itch.io/i-shoot-hue" target="_blank" class="project-btn project-btn-primary">
-            <i class="ti ti-download" style="font-size:13px;"></i> Download game
-          </a>
-          <a href="https://drive.google.com/file/d/1eys14ZtxWo8eHsE1-pa1S3h4GhbFak6q/view" target="_blank" class="project-btn project-btn-secondary">
-            <i class="ti ti-player-play" style="font-size:13px;"></i> Watch trailer
-          </a>
-        </div>
+        <button onclick="openProjectModal('ishoot')" style="padding: 10px 16px; font-size: 13px; font-weight: 500; background: #111; color: #fff; border: none; border-radius: var(--radius); cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+          <i class="ti ti-info-circle" style="font-size:14px; margin-right:6px;"></i>Project info
+        </button>
       </div>
     </div>
-  </div>
-
-    <div class="system-diagram">
-    <img src="ishoot-system.png" alt="I Shoot Hue system architecture diagram" />
-    <div class="system-caption">System architecture, Player → Mobile App → Unity Engine → Firebase Database → Admin Panel & Analytics</div>
   </div>
 </section>
 
@@ -295,13 +350,10 @@
     <div class="gallery-item" onclick="openLightbox('design-05.jpg')"><img src="design-05.jpg" alt="SK Cup jersey" loading="lazy" /><div class="gallery-label">SK Cup, basketball jersey</div></div>
     <div class="gallery-item" onclick="openLightbox('design-06.jpg')"><img src="design-06.jpg" alt="TMB uniform" loading="lazy" /><div class="gallery-label">TMB, full basketball uniform</div></div>
     <div class="gallery-item" onclick="openLightbox('design-07.jpg')"><img src="design-07.jpg" alt="Melon Chesa polo" loading="lazy" /><div class="gallery-label">Melon Chesa, polo shirt</div></div>
-    <div class="gallery-item" onclick="openLightbox('design-08.jpg')"><img src="design-08.jpg" alt="Hukbong Ama Ko v2" loading="lazy" /><div class="gallery-label">Hukbong Ama Ko, variant 2</div></div>
     <div class="gallery-item" onclick="openLightbox('design-09.jpg')"><img src="design-09.jpg" alt="Sr. El Amaro" loading="lazy" /><div class="gallery-label">Sr. El Amaro, sublimation tee</div></div>
     <div class="gallery-item" onclick="openLightbox('design-10.jpg')"><img src="design-10.jpg" alt="Sangguniang Kabataan" loading="lazy" /><div class="gallery-label">Sangguniang Kabataan, polo</div></div>
     <div class="gallery-item" onclick="openLightbox('design-11.jpg')"><img src="design-11.jpg" alt="Madam-D jersey" loading="lazy" /><div class="gallery-label">Madam-D, NBA cut jersey</div></div>
-    <div class="gallery-item" onclick="openLightbox('design-12.jpg')"><img src="design-12.jpg" alt="SK Cup v2" loading="lazy" /><div class="gallery-label">SK Cup, variant 2</div></div>
     <div class="gallery-item" onclick="openLightbox('design-13.jpg')"><img src="design-13.jpg" alt="Unli Piga Motoworks" loading="lazy" /><div class="gallery-label">Unli Piga Motoworks, polo</div></div>
-    <div class="gallery-item" onclick="openLightbox('design-14.jpg')"><img src="design-14.jpg" alt="Melon Chesa v2" loading="lazy" /><div class="gallery-label">Melon Chesa, variant 2</div></div>
   </div>
 </section>
 
@@ -311,7 +363,7 @@
   <h2 class="section-title">Logos & graphics</h2>
   <p class="section-sub">Personal design work including team branding and game graphics.</p>
   <div class="other-grid">
-    <div class="other-card">
+    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('s2w-logo.png')">
       <div class="other-thumb" style="background: #1a1030; padding: 1.5rem;">
         <img src="s2w-logo.png" alt="S2W team logo" />
       </div>
@@ -320,13 +372,22 @@
         <div class="other-desc">Team logo I designed for the I Shoot Hue development group. Created two variants, outline and filled, in Photoshop with a bold purple style.</div>
       </div>
     </div>
-    <div class="other-card">
+    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('ishoot-banner.png')">
       <div class="other-thumb" style="background: #6b2fad;">
         <img src="ishoot-banner.png" alt="I Shoot Hue banner" />
       </div>
       <div class="other-body">
         <div class="other-title">I Shoot Hue, game banner</div>
         <div class="other-desc">Official banner and promotional graphic for I Shoot Hue, featuring the game logo surrounded by colorful paint splashes.</div>
+      </div>
+    </div>
+    <div class="other-card" style="cursor: pointer;" onclick="openCrsModal()">
+      <div class="other-thumb" style="background: #000; padding: 1.5rem;">
+        <img src="crs-graphic-1080x1080.png" alt="Creators Race Series 1080x1080" />
+      </div>
+      <div class="other-body">
+        <div class="other-title">Creators Race Series, event graphic</div>
+        <div class="other-desc">Event promotional graphic for a streaming rivalry series competition. Designed with high-energy effects and clear competitor information for audience engagement.</div>
       </div>
     </div>
   </div>
@@ -340,9 +401,9 @@
     <p class="contact-intro">Have a project in mind, a game, a design, or a system that needs building? I'm open to collaborations, internships, and full-time opportunities.</p>
     <div class="contact-links">
       <a href="mailto:jonardavenido2@gmail.com" class="contact-link"><i class="ti ti-mail"></i> jonardavenido2@gmail.com</a>
+      <a href="tel:+63946931784" class="contact-link"><i class="ti ti-phone"></i> +63 946 931 784</a>
       <a href="https://github.com/H3xaaa" target="_blank" class="contact-link"><i class="ti ti-brand-github"></i> github.com/H3xaaa</a>
       <a href="https://seen2workz.itch.io/i-shoot-hue" target="_blank" class="contact-link"><i class="ti ti-device-gamepad-2"></i> seen2workz.itch.io</a>
-      <a href="https://linkedin.com/in/your-handle" target="_blank" class="contact-link"><i class="ti ti-brand-linkedin"></i> LinkedIn, add your handle</a>
     </div>
   </div>
 </section>
@@ -351,6 +412,59 @@
   <span class="footer-text">© 2026 Jonard Avenido</span>
   <span class="footer-text">Game Developer · Graphic Designer</span>
 </footer>
+
+<div class="crs-modal" id="crsModal" onclick="closeCrsModal()">
+  <button class="crs-modal-close" onclick="closeCrsModal()"><i class="ti ti-x"></i></button>
+  <div class="crs-modal-content" onclick="event.stopPropagation()">
+    <img src="crs-graphic-1080x1920.png" alt="Creators Race Series 1080x1920" class="crs-modal-img" />
+    <img src="crs-graphic-1080x1080.png" alt="Creators Race Series 1080x1080" class="crs-modal-img" />
+  </div>
+</div>
+
+<div class="project-modal" id="projectModal" onclick="closeProjectModal()">
+  <div class="project-modal-content" onclick="event.stopPropagation()">
+    <div class="project-modal-header">
+      <h2 class="project-modal-title" id="projectModalTitle">I Shoot Hue</h2>
+      <button class="project-modal-close" onclick="closeProjectModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="project-modal-body">
+      <div class="project-modal-tags" id="projectModalTags">
+        <span class="project-modal-tag">Unity</span>
+        <span class="project-modal-tag">C#</span>
+        <span class="project-modal-tag">Firebase</span>
+        <span class="project-modal-tag">Mobile</span>
+      </div>
+      <p class="project-modal-desc" id="projectModalDesc">A color-based mobile shooting game where players identify and shoot hues against the clock. I built the full backend, Firebase auth, real-time database, player stats, and leaderboards, plus designed the S2W team logo and game UI.</p>
+      <div class="project-modal-actions">
+        <a href="https://seen2workz.itch.io/i-shoot-hue" target="_blank" class="project-modal-btn project-modal-btn-primary">
+          <i class="ti ti-download" style="font-size:14px;"></i> Download game
+        </a>
+        <a href="https://drive.google.com/file/d/1eys14ZtxWo8eHsE1-pa1S3h4GhbFak6q/view" target="_blank" class="project-modal-btn project-modal-btn-secondary">
+          <i class="ti ti-player-play" style="font-size:14px;"></i> Watch trailer
+        </a>
+      </div>
+      <div class="project-modal-diagram">
+        <img src="ishoot-system.png" alt="I Shoot Hue system architecture diagram" />
+        <div class="project-modal-diagram-caption">System architecture, Player → Mobile App → Unity Engine → Firebase Database → Admin Panel & Analytics</div>
+      </div>
+      <div class="project-modal-section">
+        <div class="project-modal-section-label">Developer contribution</div>
+        <p style="font-size:14px; color: var(--muted); line-height:1.7; margin-bottom:1rem;">Built core UI screens for the game, including sign-in flow, level selection, shop interfaces, and leaderboard screens. Integrated the visuals with gameplay systems so the interface felt responsive and polished.</p>
+      </div>
+      <div class="project-modal-section" id="projectModalGallerySection">
+        <div class="project-modal-section-label">Visuals & Screenshots</div>
+        <div class="project-modal-gallery" id="projectModalGallery">
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-shop-01.png')"><img src="ishoot-shop-01.png" alt="I Shoot Hue shop screen 1" /></div>
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-shop-02.png')"><img src="ishoot-shop-02.png" alt="I Shoot Hue shop screen 2" /></div>
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-shop-03.png')"><img src="ishoot-shop-03.png" alt="I Shoot Hue shop screen 3" /></div>
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-shop-04.png')"><img src="ishoot-shop-04.png" alt="I Shoot Hue shop screen 4" /></div>
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-shop-05.png')"><img src="ishoot-shop-05.png" alt="I Shoot Hue shop screen 5" /></div>
+          <div class="project-modal-gallery-item" onclick="openLightbox('ishoot-leaderboard.png')"><img src="ishoot-leaderboard.png" alt="I Shoot Hue leaderboard screen" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()"><i class="ti ti-x"></i></button>
@@ -367,7 +481,62 @@
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  
+  function openCrsModal() {
+    document.getElementById('crsModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCrsModal() {
+    document.getElementById('crsModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  
+  function openProjectModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    
+    if (projectId === 'ishoot') {
+      document.getElementById('projectModalTitle').textContent = 'I Shoot Hue';
+      document.getElementById('projectModalDesc').textContent = 'A color-based mobile shooting game where players identify and shoot hues against the clock. I built the full backend, Firebase auth, real-time database, player stats, and leaderboards, plus designed the S2W team logo and game UI.';
+    }
+  }
+  
+  function closeProjectModal() {
+    document.getElementById('projectModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('theme', theme);
+    const btn = document.querySelector('.theme-toggle');
+    if (btn) {
+      btn.innerHTML = theme === 'dark' ? '<i class="ti ti-sun"></i>' : '<i class="ti ti-moon"></i>';
+    }
+  }
+
+  function toggleTheme() {
+    const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyTheme(nextTheme);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const stored = localStorage.getItem('theme');
+    applyTheme(stored === 'dark' ? 'dark' : 'light');
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+      closeCrsModal();
+      closeProjectModal();
+    }
+  });
 </script>
 </body>
 </html>
