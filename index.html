@@ -173,6 +173,9 @@
     /* CRS MODAL */
     .crs-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; align-items: center; justify-content: center; padding: 2rem; overflow-y: auto; }
     .crs-modal.open { display: flex; }
+
+    /* When a modal is open, prevent the page behind from scrolling */
+    html.modal-open, body.modal-open { overflow: hidden; height: 100%; }
     .crs-modal-content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; max-width: 1200px; width: 100%; }
     .crs-modal-img { max-width: 100%; max-height: 90vh; border-radius: var(--radius-lg); object-fit: contain; }
     .crs-modal-close { position: fixed; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; }
@@ -237,7 +240,7 @@
   </div>
   <div class="hero-deco" aria-hidden="true">
     <div class="hero-deco-inner">
-      <img src="assets/profile/profile.jpg" alt="Profile photo" />
+      <img src="assets/profile/profile.jpg?v=20260622" alt="Profile photo" />
     </div>
   </div>
 </div>
@@ -333,7 +336,7 @@
   <div class="projects-grid">
     <div class="project-card" style="cursor: pointer;">
       <div class="project-thumb">
-        <img src="assets/ishoot/banner/ishoot-banner.png" alt="I Shoot Hue banner" />
+        <img src="assets/ishoot/banner/ishoot-banner.png?v=20260622" alt="I Shoot Hue banner" />
       </div>
       <div class="project-body">
         <div class="project-title">I Shoot Hue</div>
@@ -351,17 +354,17 @@
   <h2 class="section-title">Team Motorero Sportswear</h2>
   <p class="section-sub">Sublimation apparel designs created during my internship, basketball jerseys, polo shirts, and custom tees for real clients.</p>
   <div class="gallery-grid">
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-01.jpg')"><img src="assets/ojt/design-01.jpg" alt="Hukbong Ama Ko" loading="lazy" /><div class="gallery-label">Hukbong Ama Ko, sublimation tee</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-02.jpg')"><img src="assets/ojt/design-02.jpg" alt="OLLC Blue Sharks" loading="lazy" /><div class="gallery-label">OLLC Blue Sharks, basketball jersey</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-03.jpg')"><img src="assets/ojt/design-03.jpg" alt="Ballearn jersey" loading="lazy" /><div class="gallery-label">Ballearn, basketball jersey</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-04.jpg')"><img src="assets/ojt/design-04.jpg" alt="Lingkod ni Jesus Nazareno" loading="lazy" /><div class="gallery-label">Lingkod ni Jesus Nazareno, tee</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-05.jpg')"><img src="assets/ojt/design-05.jpg" alt="SK Cup jersey" loading="lazy" /><div class="gallery-label">SK Cup, basketball jersey</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-06.jpg')"><img src="assets/ojt/design-06.jpg" alt="TMB uniform" loading="lazy" /><div class="gallery-label">TMB, full basketball uniform</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-07.jpg')"><img src="assets/ojt/design-07.jpg" alt="Melon Chesa polo" loading="lazy" /><div class="gallery-label">Melon Chesa, polo shirt</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-09.jpg')"><img src="assets/ojt/design-09.jpg" alt="Sr. El Amaro" loading="lazy" /><div class="gallery-label">Sr. El Amaro, sublimation tee</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-10.jpg')"><img src="assets/ojt/design-10.jpg" alt="Sangguniang Kabataan" loading="lazy" /><div class="gallery-label">Sangguniang Kabataan, polo</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-11.jpg')"><img src="assets/ojt/design-11.jpg" alt="Madam-D jersey" loading="lazy" /><div class="gallery-label">Madam-D, NBA cut jersey</div></div>
-    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-13.jpg')"><img src="assets/ojt/design-13.jpg" alt="Unli Piga Motoworks" loading="lazy" /><div class="gallery-label">Unli Piga Motoworks, polo</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-01.jpg?v=20260622')"><img src="assets/ojt/design-01.jpg?v=20260622" alt="Hukbong Ama Ko" loading="lazy" /><div class="gallery-label">Hukbong Ama Ko, sublimation tee</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-02.jpg?v=20260622')"><img src="assets/ojt/design-02.jpg?v=20260622" alt="OLLC Blue Sharks" loading="lazy" /><div class="gallery-label">OLLC Blue Sharks, basketball jersey</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-03.jpg?v=20260622')"><img src="assets/ojt/design-03.jpg?v=20260622" alt="Ballearn jersey" loading="lazy" /><div class="gallery-label">Ballearn, basketball jersey</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-04.jpg?v=20260622')"><img src="assets/ojt/design-04.jpg?v=20260622" alt="Lingkod ni Jesus Nazareno" loading="lazy" /><div class="gallery-label">Lingkod ni Jesus Nazareno, tee</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-05.jpg?v=20260622')"><img src="assets/ojt/design-05.jpg?v=20260622" alt="SK Cup jersey" loading="lazy" /><div class="gallery-label">SK Cup, basketball jersey</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-06.jpg?v=20260622')"><img src="assets/ojt/design-06.jpg?v=20260622" alt="TMB uniform" loading="lazy" /><div class="gallery-label">TMB, full basketball uniform</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-07.jpg?v=20260622')"><img src="assets/ojt/design-07.jpg?v=20260622" alt="Melon Chesa polo" loading="lazy" /><div class="gallery-label">Melon Chesa, polo shirt</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-09.jpg?v=20260622')"><img src="assets/ojt/design-09.jpg?v=20260622" alt="Sr. El Amaro" loading="lazy" /><div class="gallery-label">Sr. El Amaro, sublimation tee</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-10.jpg?v=20260622')"><img src="assets/ojt/design-10.jpg?v=20260622" alt="Sangguniang Kabataan" loading="lazy" /><div class="gallery-label">Sangguniang Kabataan, polo</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-11.jpg?v=20260622')"><img src="assets/ojt/design-11.jpg?v=20260622" alt="Madam-D jersey" loading="lazy" /><div class="gallery-label">Madam-D, NBA cut jersey</div></div>
+    <div class="gallery-item" onclick="openLightbox('assets/ojt/design-13.jpg?v=20260622')"><img src="assets/ojt/design-13.jpg?v=20260622" alt="Unli Piga Motoworks" loading="lazy" /><div class="gallery-label">Unli Piga Motoworks, polo</div></div>
   </div>
 </section>
 
@@ -371,18 +374,18 @@
   <h2 class="section-title">Logos & graphics</h2>
   <p class="section-sub">Personal design work including team branding and game graphics.</p>
   <div class="other-grid">
-    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('assets/logos/s2w-logo.png')">
+    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('assets/logos/s2w-logo.png?v=20260622')">
       <div class="other-thumb" style="background: #1a1030; padding: 1.5rem;">
-        <img src="assets/logos/s2w-logo.png" alt="S2W team logo" />
+        <img src="assets/logos/s2w-logo.png?v=20260622" alt="S2W team logo" />
       </div>
       <div class="other-body">
         <div class="other-title">S2W, Seen2Workz logo</div>
         <div class="other-desc">Team logo I designed for the I Shoot Hue development group. Created two variants, outline and filled, in Photoshop with a bold purple style.</div>
       </div>
     </div>
-    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('assets/ishoot/banner/ishoot-banner.png')">
+    <div class="other-card" style="cursor: pointer;" onclick="openLightbox('assets/ishoot/banner/ishoot-banner.png?v=20260622')">
       <div class="other-thumb" style="background: #6b2fad;">
-        <img src="assets/ishoot/banner/ishoot-banner.png" alt="I Shoot Hue banner" />
+        <img src="assets/ishoot/banner/ishoot-banner.png?v=20260622" alt="I Shoot Hue banner" />
       </div>
       <div class="other-body">
         <div class="other-title">I Shoot Hue, game banner</div>
@@ -391,7 +394,7 @@
     </div>
     <div class="other-card" style="cursor: pointer;" onclick="openCrsModal()">
       <div class="other-thumb" style="background: #000; padding: 1.5rem;">
-        <img src="assets/crs/crs-graphic-1080x1080.png" alt="Creators Race Series 1080x1080" />
+        <img src="assets/crs/crs-graphic-1080x1080.png?v=20260622" alt="Creators Race Series 1080x1080" />
       </div>
       <div class="other-body">
         <div class="other-title">Creators Race Series, event graphic</div>
@@ -421,11 +424,11 @@
   <span class="footer-text">Game Developer · Graphic Designer</span>
 </footer>
 
-<div class="crs-modal" id="crsModal" onclick="closeCrsModal()">
+  <div class="crs-modal" id="crsModal" onclick="closeCrsModal()">
   <button class="crs-modal-close" onclick="closeCrsModal()"><i class="ti ti-x"></i></button>
   <div class="crs-modal-content" onclick="event.stopPropagation()">
-    <img src="assets/crs/crs-graphic-1080x1920.png" alt="Creators Race Series 1080x1920" class="crs-modal-img" />
-    <img src="assets/crs/crs-graphic-1080x1080.png" alt="Creators Race Series 1080x1080" class="crs-modal-img" />
+    <img src="assets/crs/crs-graphic-1080x1920.png?v=20260622" alt="Creators Race Series 1080x1920" class="crs-modal-img" />
+    <img src="assets/crs/crs-graphic-1080x1080.png?v=20260622" alt="Creators Race Series 1080x1080" class="crs-modal-img" />
   </div>
 </div>
 
@@ -452,7 +455,7 @@
         </a>
       </div>
       <div class="project-modal-diagram">
-        <img src="assets/ishoot/system/ishoot-system.png" alt="I Shoot Hue system architecture diagram" />
+        <img src="assets/ishoot/system/ishoot-system.png?v=20260622" alt="I Shoot Hue system architecture diagram" />
         <div class="project-modal-diagram-caption">System architecture, Player → Mobile App → Unity Engine → Firebase Database → Admin Panel & Analytics</div>
       </div>
       <div class="project-modal-section">
@@ -476,8 +479,8 @@
             <div class="project-modal-card-header">Login screen</div>
             <div class="project-modal-card-body">
               <p>Login/authentication UI for player sign-in, account access, and game entry flow.</p>
-              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-login.png')">
-                <img src="assets/ishoot/ui/ishoot-login.png" alt="I Shoot Hue login screen" />
+              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-login.png?v=20260622')">
+                <img src="assets/ishoot/ui/ishoot-login.png?v=20260622" alt="I Shoot Hue login screen" />
               </div>
             </div>
           </div>
@@ -486,11 +489,11 @@
             <div class="project-modal-card-body">
               <p>Shop visuals for item selection, currency purchase flow, and in-game cosmetics.</p>
               <div class="project-modal-thumb-grid">
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-01.png')"><img src="assets/ishoot/shop/ishoot-shop-01.png" alt="I Shoot Hue shop screen 1" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-02.png')"><img src="assets/ishoot/shop/ishoot-shop-02.png" alt="I Shoot Hue shop screen 2" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-03.png')"><img src="assets/ishoot/shop/ishoot-shop-03.png" alt="I Shoot Hue shop screen 3" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-04.png')"><img src="assets/ishoot/shop/ishoot-shop-04.png" alt="I Shoot Hue shop screen 4" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-05.png')"><img src="assets/ishoot/shop/ishoot-shop-05.png" alt="I Shoot Hue shop screen 5" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-01.png?v=20260622')"><img src="assets/ishoot/shop/ishoot-shop-01.png?v=20260622" alt="I Shoot Hue shop screen 1" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-02.png?v=20260622')"><img src="assets/ishoot/shop/ishoot-shop-02.png?v=20260622" alt="I Shoot Hue shop screen 2" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-03.png?v=20260622')"><img src="assets/ishoot/shop/ishoot-shop-03.png?v=20260622" alt="I Shoot Hue shop screen 3" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-04.png?v=20260622')"><img src="assets/ishoot/shop/ishoot-shop-04.png?v=20260622" alt="I Shoot Hue shop screen 4" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/shop/ishoot-shop-05.png?v=20260622')"><img src="assets/ishoot/shop/ishoot-shop-05.png?v=20260622" alt="I Shoot Hue shop screen 5" /></div>
               </div>
             </div>
           </div>
@@ -498,8 +501,8 @@
             <div class="project-modal-card-header">Level selection</div>
             <div class="project-modal-card-body">
               <p>Level selection interface showing stage choices, progress, and navigation controls.</p>
-              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-levelselect.png')">
-                <img src="assets/ishoot/ui/ishoot-levelselect.png" alt="I Shoot Hue level select screen" />
+              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-levelselect.png?v=20260622')">
+                <img src="assets/ishoot/ui/ishoot-levelselect.png?v=20260622" alt="I Shoot Hue level select screen" />
               </div>
             </div>
           </div>
@@ -507,8 +510,8 @@
             <div class="project-modal-card-header">Leaderboard</div>
             <div class="project-modal-card-body">
               <p>Leaderboard view for player ranking, score display, and competitive progress.</p>
-              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-leaderboard.png')">
-                <img src="assets/ishoot/ui/ishoot-leaderboard.png" alt="I Shoot Hue leaderboard screen" />
+              <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/ui/ishoot-leaderboard.png?v=20260622')">
+                <img src="assets/ishoot/ui/ishoot-leaderboard.png?v=20260622" alt="I Shoot Hue leaderboard screen" />
               </div>
             </div>
           </div>
@@ -517,10 +520,10 @@
             <div class="project-modal-card-body">
               <p>HUD components: time panel, coins/score panel, color buttons, and lives (buckets).</p>
               <div class="project-modal-thumb-grid">
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-hudpanel.png')"><img src="assets/ishoot/hud/ishoot-hud-hudpanel.png" alt="I Shoot Hue HUD panel" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-buttons.png')"><img src="assets/ishoot/hud/ishoot-hud-buttons.png" alt="I Shoot Hue color buttons" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-buckets.png')"><img src="assets/ishoot/hud/ishoot-hud-buckets.png" alt="I Shoot Hue bucket lives" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-targets.png')"><img src="assets/ishoot/hud/ishoot-hud-targets.png" alt="I Shoot Hue target counters" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-hudpanel.png?v=20260622')"><img src="assets/ishoot/hud/ishoot-hud-hudpanel.png?v=20260622" alt="I Shoot Hue HUD panel" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-buttons.png?v=20260622')"><img src="assets/ishoot/hud/ishoot-hud-buttons.png?v=20260622" alt="I Shoot Hue color buttons" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-buckets.png?v=20260622')"><img src="assets/ishoot/hud/ishoot-hud-buckets.png?v=20260622" alt="I Shoot Hue bucket lives" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/hud/ishoot-hud-targets.png?v=20260622')"><img src="assets/ishoot/hud/ishoot-hud-targets.png?v=20260622" alt="I Shoot Hue target counters" /></div>
               </div>
             </div>
           </div>
@@ -529,10 +532,10 @@
             <div class="project-modal-card-body">
               <p>Philippines-based gameplay maps inspired by real locations in the country.</p>
               <div class="project-modal-thumb-grid">
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-intramuros.png')"><img src="assets/ishoot/maps/ishoot-map-intramuros.png" alt="I Shoot Hue Intramuros map" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-luneta.png')"><img src="assets/ishoot/maps/ishoot-map-luneta.png" alt="I Shoot Hue Luneta Park map" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-boracay.png')"><img src="assets/ishoot/maps/ishoot-map-boracay.png" alt="I Shoot Hue Boracay map" /></div>
-                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-mayon.png')"><img src="assets/ishoot/maps/ishoot-map-mayon.png" alt="I Shoot Hue Mayon map" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-intramuros.png?v=20260622')"><img src="assets/ishoot/maps/ishoot-map-intramuros.png?v=20260622" alt="I Shoot Hue Intramuros map" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-luneta.png?v=20260622')"><img src="assets/ishoot/maps/ishoot-map-luneta.png?v=20260622" alt="I Shoot Hue Luneta Park map" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-boracay.png?v=20260622')"><img src="assets/ishoot/maps/ishoot-map-boracay.png?v=20260622" alt="I Shoot Hue Boracay map" /></div>
+                <div class="project-modal-card-thumb" onclick="openLightbox('assets/ishoot/maps/ishoot-map-mayon.png?v=20260622')"><img src="assets/ishoot/maps/ishoot-map-mayon.png?v=20260622" alt="I Shoot Hue Mayon map" /></div>
               </div>
             </div>
           </div>
@@ -549,28 +552,38 @@
 
 <script>
   function openLightbox(src) {
+    console.log('[modal] openLightbox()', src);
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('modal-open');
   }
   function closeLightbox() {
+    console.log('[modal] closeLightbox()');
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
+    document.documentElement.classList.remove('modal-open');
   }
   
   function openCrsModal() {
+    console.log('[modal] openCrsModal()');
     document.getElementById('crsModal').classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('modal-open');
   }
   function closeCrsModal() {
+    console.log('[modal] closeCrsModal()');
     document.getElementById('crsModal').classList.remove('open');
     document.body.style.overflow = '';
+    document.documentElement.classList.remove('modal-open');
   }
   
   function openProjectModal(projectId) {
     const modal = document.getElementById('projectModal');
+    console.log('[modal] openProjectModal()', projectId);
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('modal-open');
     
     if (projectId === 'ishoot') {
       document.getElementById('projectModalTitle').textContent = 'I Shoot Hue';
@@ -579,8 +592,10 @@
   }
   
   function closeProjectModal() {
+    console.log('[modal] closeProjectModal()');
     document.getElementById('projectModal').classList.remove('open');
     document.body.style.overflow = '';
+    document.documentElement.classList.remove('modal-open');
   }
   
   function applyTheme(theme) {
