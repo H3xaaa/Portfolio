@@ -137,7 +137,7 @@
     /* PROJECT MODAL */
     .project-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 999; align-items: center; justify-content: center; padding: 2rem; overflow-y: auto; }
     .project-modal.open { display: flex; }
-    .project-modal-content { background: var(--bg); border-radius: var(--radius-lg); max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+    .project-modal-content { background: var(--bg); border-radius: var(--radius-lg); max-width: 720px; width: 100%; max-height: 75vh; overflow-y: auto; position: relative; }
     .project-modal-header { padding: 2rem 2rem 1.5rem; border-bottom: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; position: sticky; top: 0; background: var(--bg); }
     .project-modal-title { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
     .project-modal-close { background: transparent; border: none; color: var(--text); font-size: 22px; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -153,7 +153,13 @@
     .project-modal-btn-secondary { background: transparent; color: var(--text); border: 0.5px solid var(--border2); }
     .project-modal-btn-secondary:hover { background: var(--bg2); }
     .project-modal-diagram { border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem; }
-    .project-modal-diagram img { width: 100%; display: block; }
+    .project-modal-diagram img { width: 100%; display: block; max-height: 300px; object-fit: cover; }
+
+    /* Make project cards narrower so single project doesn't span full width */
+    .project-card { max-width: 420px; margin: 0 auto; }
+    .projects-grid { justify-items: center; }
+    .project-thumb img { max-height: 220px; object-fit: contain; }
+    .project-modal-card-thumb img { max-height: 180px; object-fit: contain; }
     .project-modal-diagram-caption { padding: 0.75rem 1rem; font-size: 12px; color: var(--muted); background: var(--bg2); border-top: 0.5px solid var(--border); }
     .project-modal-section { margin-bottom: 2rem; }
     .project-modal-section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
@@ -182,6 +188,34 @@
     .crs-modal-close:hover { background: rgba(255,255,255,0.25); }
     @media (max-width: 900px) {
       .crs-modal-content { grid-template-columns: 1fr; }
+    }
+
+    /* Entry animations for cards and list items */
+
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .skills-grid > *, .projects-grid > *, .other-grid > *, .gallery-grid > *, .exp-list .exp-item {
+      opacity: 0;
+      animation: slideUpFade 360ms cubic-bezier(.2,.9,.2,1) forwards;
+      will-change: transform, opacity;
+    }
+
+    /* Small stagger for the first few items */
+    .skills-grid > *:nth-child(1), .projects-grid > *:nth-child(1), .other-grid > *:nth-child(1), .gallery-grid > *:nth-child(1), .exp-list .exp-item:nth-child(1) { animation-delay: 40ms; }
+    .skills-grid > *:nth-child(2), .projects-grid > *:nth-child(2), .other-grid > *:nth-child(2), .gallery-grid > *:nth-child(2), .exp-list .exp-item:nth-child(2) { animation-delay: 100ms; }
+    .skills-grid > *:nth-child(3), .projects-grid > *:nth-child(3), .other-grid > *:nth-child(3), .gallery-grid > *:nth-child(3), .exp-list .exp-item:nth-child(3) { animation-delay: 160ms; }
+    .skills-grid > *:nth-child(4), .projects-grid > *:nth-child(4), .other-grid > *:nth-child(4), .gallery-grid > *:nth-child(4), .exp-list .exp-item:nth-child(4) { animation-delay: 220ms; }
+    .skills-grid > *:nth-child(5), .projects-grid > *:nth-child(5), .other-grid > *:nth-child(5), .gallery-grid > *:nth-child(5), .exp-list .exp-item:nth-child(5) { animation-delay: 280ms; }
+    .skills-grid > *:nth-child(6), .projects-grid > *:nth-child(6), .other-grid > *:nth-child(6), .gallery-grid > *:nth-child(6), .exp-list .exp-item:nth-child(6) { animation-delay: 340ms; }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .skills-grid > *, .projects-grid > *, .other-grid > *, .gallery-grid > *, .exp-list .exp-item {
+        animation: none !important; opacity: 1 !important; transform: none !important;
+      }
     }
 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
