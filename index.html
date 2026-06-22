@@ -555,35 +555,30 @@
     console.log('[modal] openLightbox()', src);
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.documentElement.classList.add('modal-open');
+    disableScroll();
   }
   function closeLightbox() {
     console.log('[modal] closeLightbox()');
     document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-    document.documentElement.classList.remove('modal-open');
+    enableScroll();
   }
   
   function openCrsModal() {
     console.log('[modal] openCrsModal()');
     document.getElementById('crsModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.documentElement.classList.add('modal-open');
+    disableScroll();
   }
   function closeCrsModal() {
     console.log('[modal] closeCrsModal()');
     document.getElementById('crsModal').classList.remove('open');
-    document.body.style.overflow = '';
-    document.documentElement.classList.remove('modal-open');
+    enableScroll();
   }
   
   function openProjectModal(projectId) {
     const modal = document.getElementById('projectModal');
     console.log('[modal] openProjectModal()', projectId);
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.documentElement.classList.add('modal-open');
+    disableScroll();
     
     if (projectId === 'ishoot') {
       document.getElementById('projectModalTitle').textContent = 'I Shoot Hue';
@@ -594,8 +589,28 @@
   function closeProjectModal() {
     console.log('[modal] closeProjectModal()');
     document.getElementById('projectModal').classList.remove('open');
-    document.body.style.overflow = '';
+    enableScroll();
+  }
+
+  // Prevent background scrolling in all browsers (more robust for Opera GX)
+  function disableScroll() {
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.dataset.modalScrollY = String(scrollY);
+  }
+
+  function enableScroll() {
+    const saved = document.body.dataset.modalScrollY;
+    const scrollY = saved ? parseInt(saved, 10) : 0;
     document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    delete document.body.dataset.modalScrollY;
+    window.scrollTo(0, scrollY);
   }
   
   function applyTheme(theme) {
