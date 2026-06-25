@@ -33,13 +33,13 @@
       --radius: 18px;
       --radius-lg: 24px;
     }
-    body { font-family: 'Poppins', 'Inter', sans-serif; color: var(--text); background: radial-gradient(circle at top, rgba(79,118,179,0.06), transparent 24%), linear-gradient(180deg, #0f172a 0%, #0b1320 100%); line-height: 1.75; font-size: clamp(0.95rem, 1vw + 0.2rem, 1.05rem); }
+    body { font-family: 'Poppins', 'Inter', sans-serif; color: var(--text); background: radial-gradient(circle at top, rgba(79,118,179,0.06), transparent 24%), linear-gradient(180deg, #0f172a 0%, #0b1320 100%); line-height: 1.75; font-size: 15px; }
     .heading-font, .nav-logo, .hero-name, .section-label, .section-title, .hero-eyebrow, .exp-role, .project-title, .other-title, .contact-intro, .skill-name {
       font-family: 'Oswald', 'Inter', 'Poppins', sans-serif;
       letter-spacing: 0.03em;
     }
     .nav-logo { font-weight: 700; letter-spacing: 0.12em; color: #fff; }
-    .nav-links a { font-size: clamp(0.82rem, 0.95vw, 0.92rem); letter-spacing: 0.04em; color: var(--muted); transition: color 0.2s ease, transform 0.2s ease; }
+    .nav-links a { font-size: 14px; letter-spacing: 0.04em; color: var(--muted); transition: color 0.2s ease, transform 0.2s ease; }
     .nav-links a:hover { color: #fff; transform: translateY(-1px); }
     .hero-eyebrow { font-weight: 600; letter-spacing: 0.18em; color: var(--accent); }
     .hero-name { font-weight: 700; line-height: 1.02; letter-spacing: -0.03em; }
@@ -58,7 +58,7 @@
     .about-text, .project-desc, .exp-desc, .other-desc, .contact-intro {
       color: var(--muted);
       font-family: 'Poppins', 'Inter', sans-serif;
-      font-size: clamp(0.95rem, 1vw, 1.05rem);
+      font-size: 16px;
       line-height: 1.85;
     }
     .btn-primary, .btn-secondary, .project-btn, .project-modal-btn, .project-modal-close, .contact-link {
@@ -75,22 +75,21 @@
     .theme-toggle:hover { background: rgba(79,118,179,0.14); color: #fff; border-color: rgba(79,118,179,0.45); }
     .theme-toggle i { font-size: 16px; }
 
-    .hero { min-height: 680px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3rem; padding: 6rem 2.5rem 4rem; position: relative; overflow: hidden; max-width: 1120px; margin: 0 auto; }
+    .hero { min-height: 680px; display: flex; flex-direction: column; justify-content: center; padding: 6rem 2.5rem 4rem; position: relative; overflow: hidden; max-width: 1120px; margin: 0 auto; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 78% 16%, rgba(79,118,179,0.16), transparent 22%), radial-gradient(circle at 14% 20%, rgba(79,118,179,0.10), transparent 16%); pointer-events: none; }
     .hero-eyebrow { font-size: 12px; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
-    .hero-eyebrow::before { content: ''; width: 44px; height: 1px; background: var(--accent); display: inline-block; }
-    .hero-name { font-size: clamp(3.2rem, 7vw, 5.5rem); margin-bottom: 1.5rem; max-width: 860px; }
+    .hero-eyebrow::before { content: none; }
+    .hero-name { font-size: clamp(48px, 7vw, 88px); margin-bottom: 1.5rem; max-width: 860px; }
     .hero-name em { font-style: normal; color: var(--accent); }
-    .hero-sub { font-size: clamp(1rem, 1.15vw, 1.2rem); color: var(--muted); line-height: 1.7; max-width: 700px; margin-bottom: 2.25rem; }
+    .hero-sub { font-size: 20px; color: var(--muted); line-height: 1.7; max-width: 700px; margin-bottom: 2.25rem; }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem; }
-    .tag { font-size: clamp(0.72rem, 0.85vw, 0.9rem); padding: clamp(6px, 0.8vw, 10px) clamp(12px, 1.2vw, 16px); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: #fff; background: rgba(255,255,255,0.04); }
+    .tag { font-size: 12px; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: #fff; background: rgba(255,255,255,0.04); }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary { padding: clamp(12px, 1.2vw, 16px) clamp(20px, 2vw, 26px); font-size: clamp(0.88rem, 0.95vw, 1rem); font-weight: 700; background: linear-gradient(135deg, #5d84c2, #4f76b3); color: #fff; border: none; border-radius: 999px; cursor: pointer; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 18px 42px rgba(79,118,179,0.24); }
+    .btn-primary { padding: 14px 28px; font-size: 14px; font-weight: 700; background: linear-gradient(135deg, #5d84c2, #4f76b3); color: #fff; border: none; border-radius: 999px; cursor: pointer; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 18px 42px rgba(79,118,179,0.24); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 22px 50px rgba(79,118,179,0.28); }
-    .btn-secondary { padding: clamp(12px, 1.2vw, 16px) clamp(20px, 2vw, 26px); font-size: clamp(0.88rem, 0.95vw, 1rem); font-weight: 700; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-secondary { padding: 14px 28px; font-size: 14px; font-weight: 700; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
     .btn-secondary:hover { background: rgba(255,255,255,0.10); }
-    .hero-photo { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); width: min(280px, 35vw); max-width: 100%; border-radius: 28px; object-fit: cover; box-shadow: 0 22px 50px rgba(0,0,0,0.24); }
-    .hero-photo:hover { transform: translateY(-2px); }
+    .hero-photo { position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); width: 280px; border-radius: 28px; object-fit: cover; box-shadow: 0 22px 50px rgba(0,0,0,0.24); }
     .hero-deco-label { font-size: 11px; color: var(--muted); }
 
     section { padding: 4.5rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
@@ -99,10 +98,10 @@
     .section-label::before { display: none; }
     .section-title { font-size: clamp(36px, 4vw, 52px); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
     .section-title.uppercase { font-size: clamp(38px, 4.3vw, 54px); }
-    .section-sub { font-size: clamp(0.95rem, 1vw, 1.1rem); color: var(--muted); margin-bottom: 2.5rem; max-width: 760px; line-height: 1.85; }
+    .section-sub { font-size: 17px; color: var(--muted); margin-bottom: 2.5rem; max-width: 760px; line-height: 1.85; }
 
     .about-grid { display: grid; grid-template-columns: 1.25fr 0.85fr; gap: 2.5rem; align-items: start; }
-    .about-text { font-size: clamp(0.95rem, 1vw, 1.05rem); line-height: 1.9; color: var(--muted); }
+    .about-text { font-size: 16px; line-height: 1.9; color: var(--muted); }
     .about-text p { margin-bottom: 1rem; }
     .about-text strong { color: #fff; font-weight: 600; }
     .about-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -275,12 +274,10 @@
 
     @media (max-width: 640px) {
       .nav-links { display: none; }
-      .hero { display: block; padding: 3.5rem 1.5rem 3rem; }
+      .hero { padding: 3.5rem 1.5rem 3rem; }
       body { scroll-snap-type: none; }
-      .hero-photo { display: none; }
-      .hero-name { font-size: clamp(2.25rem, 8vw, 3.4rem); }
-      .hero-sub { max-width: 100%; }
-      .hero-actions { justify-content: flex-start; }
+      .hero-deco { display: none; }
+      .hero-name { font-size: 42px; }
       section { padding: 3rem 1.5rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
@@ -320,8 +317,8 @@
     <a href="#projects" class="btn-primary">View projects</a>
     <a href="#contact" class="btn-secondary">Get in touch</a>
   </div>
+  <img class="hero-photo" src="assets/profile/profile.jpg?v=20260622" alt="Profile photo" />
 </div>
-<img class="hero-photo" src="assets/profile/profile.jpg?v=20260622" alt="Profile photo" />
 
 <!-- ABOUT -->
 <section id="about">
